@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "start": "node build start"
+  },
+  "dependencies": {
+    "http-server": "^0.11.1"
+  }
+}
