@@ -16,7 +16,7 @@ function dev() {
     fs.readFile(path.resolve(__dirname, "config.json"), "utf8", function(err, data) {
         const config = JSON.parse(data);
 
-        child_process.spawn(path.resolve("node_modules/.bin/http-server"), [
+        child_process.spawn(path.resolve(__dirname, "node_modules/.bin/http-server"), [
             "-p",
             config.port,
         ], {
@@ -24,7 +24,9 @@ function dev() {
             stdio: "inherit",
         });
 
-        opn(`http://localhost:${config.port}`);
+        setTimeout(function() {
+            opn(`http://localhost:${config.port}`);
+        }, 500);
     });
 }
 
