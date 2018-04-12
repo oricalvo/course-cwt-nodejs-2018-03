@@ -1,0 +1,6 @@
+<script>
+    const url = new URL(window.location.href);
+    const email = url.searchParams.get("email");
+    window.opener.onAuthComplete(email);
+    window.close();
+</script>
